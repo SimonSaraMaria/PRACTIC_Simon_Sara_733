@@ -24,7 +24,7 @@ public class TrafficController {
                 System.out.println("\n--- Traffic Control Menu ---");
                 System.out.println("1. Task 1: Show Counts and All Vehicles");
                 System.out.println("2. Task 2: Filter by Type and Status");
-//                System.out.println("3. Task 3: Sort tributes by skill level");
+                System.out.println("3. Task 3: Sort vehicles");
 //                System.out.println("4. Task 4: Saving sorted tributes to file");
 //                System.out.println("5. Task 5: Computed points for first 5 events");
 //                System.out.println("6. Task 6: Top 5 tributes");
@@ -54,13 +54,13 @@ public class TrafficController {
                             System.out.println(vehicle);
                         }
                     }
-//                    case 3 -> {
-//                        System.out.print("Sorted tributes: ");
-//                        List<Tribut> sorted = tributeService.getSortedTributes(tributes);
-//                        for (Tribut t : sorted) {
-//                            System.out.println(t);
-//                        }
-//                    }
+                    case 3 -> {
+                        System.out.print("Sorted vehicles: ");
+                        List<Vehicle> sorted = service.getSortedVehicles(vehicles);
+                        for (Vehicle v : sorted) {
+                            System.out.println(v);
+                        }
+                    }
 //                    case 4 -> {
 //                        System.out.print("Saving sorted tributes: ");
 //                        try {

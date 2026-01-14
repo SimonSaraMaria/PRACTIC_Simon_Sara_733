@@ -13,15 +13,20 @@ import java.util.stream.Collectors;
 
 public class VehicleService {
 
-    //Filtern nach Fahrzeugtyp und Status
-//Lesen Sie von der Tastatur:
-//● einen Fahrzeugtyp (VehicleType)
-//● einen Fahrzeugstatus (VehicleStatus)
-
     public List<Vehicle> filterTypeAndStatus(List<Vehicle> vehicles, VehicleType type, VehicleStatus status) {
         return vehicles.stream()
                 .filter(vehicle -> vehicle.getType().equals(type))
                 .filter(vehicle -> vehicle.getStatus().equals(status))
                 .collect(Collectors.toList());
+    }
+
+    public List<Vehicle> getSortedVehicles(List<Vehicle> vehicles) {
+        List<Vehicle> sortedList = new ArrayList<>();
+
+        sortedList.sort(Comparator
+                .comparing(Vehicle::getOwnerCity)
+                .thenComparing(Vehicle::getId).reversed());
+
+        return vehicles;
     }
 }
