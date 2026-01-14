@@ -1,5 +1,5 @@
 package model;
 
-public enum VehicleSTATUS {
+public enum VehicleStatus {
     ACTIVE, BLOCKED
 }
