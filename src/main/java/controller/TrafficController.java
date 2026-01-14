@@ -1,6 +1,7 @@
 package controller;
 import model.*;
 import repository.TrafficRepository;
+import service.EreignisService;
 import service.VehicleService;
 
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class TrafficController {
                 System.out.println("2. Task 2: Filter by Type and Status");
                 System.out.println("3. Task 3: Sort vehicles");
                 System.out.println("4. Task 4: Saving sorted vehicles to file");
-//                System.out.println("5. Task 5: Computed points for first 5 events");
+                System.out.println("5. Task 5: Calculated Risiko");
 //                System.out.println("6. Task 6: Top 5 tributes");
 //                System.out.println("7. Task 7: Arena report");
                 System.out.println("0. Exit");
@@ -71,16 +72,16 @@ public class TrafficController {
                             System.err.println(e);
                         }
                     }
-//                    case 5 -> {
-//                        System.out.print("Computed points: ");
-//                        EventService eventService = new EventService();
-//                        for (int i = 0; i < 5 && i < events.size(); i++) {
-//                            Ereignis e = events.get(i);
-//                            int computedPoints = eventService.calculateComputedPoints(e);
-//                            System.out.println("Event" + e.getId() + "-> rawPoints" + e.getPoints() +
-//                                    "-> computedPoints = " + computedPoints);
-//                        }
-//                    }
+                    case 5 -> {
+                        System.out.print("Risiko: ");
+                        EreignisService ereignisService = new EreignisService();
+                        for (int i = 0; i < 5 && i < events.size(); i++) {
+                            TrafficEvent e = events.get(i);
+                            int computedPoints = ereignisService.calculateRisikoScore(e);
+                            System.out.println("Event" + e.getId() + "-> severity=" + e.getSeverity() +
+                                    "-> riskScore = " + computedPoints);
+                        }
+                    }
 //                    case 6 -> {
 //                        System.out.println("Top 5 Tributes:");
 //                        EventService eventService = new EventService();
