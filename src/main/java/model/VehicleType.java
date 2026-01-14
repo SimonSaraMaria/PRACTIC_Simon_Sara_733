@@ -1,5 +1,5 @@
 package model;
 
 public enum VehicleType {
-    CAR, BUS, TANK
+    CAR, BUS, TRUCK
 }
