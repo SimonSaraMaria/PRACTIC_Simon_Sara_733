@@ -25,7 +25,7 @@ public class TrafficController {
                 System.out.println("1. Task 1: Show Counts and All Vehicles");
                 System.out.println("2. Task 2: Filter by Type and Status");
                 System.out.println("3. Task 3: Sort vehicles");
-//                System.out.println("4. Task 4: Saving sorted tributes to file");
+                System.out.println("4. Task 4: Saving sorted vehicles to file");
 //                System.out.println("5. Task 5: Computed points for first 5 events");
 //                System.out.println("6. Task 6: Top 5 tributes");
 //                System.out.println("7. Task 7: Arena report");
@@ -61,16 +61,16 @@ public class TrafficController {
                             System.out.println(v);
                         }
                     }
-//                    case 4 -> {
-//                        System.out.print("Saving sorted tributes: ");
-//                        try {
-//                            List<Tribut> sorted = tributeService.getSortedTributes(tributes);
-//                            tributeService.saveTributesToFile(sorted, "tributes_sorted.txt");
-//                            System.out.println("Successfully saved sorted tributes!");
-//                        } catch (IOException e) {
-//                            System.err.println(e);
-//                        }
-//                    }
+                    case 4 -> {
+                        System.out.print("Saving sorted vehicles: ");
+                        try {
+                            List<Vehicle> sorted = service.getSortedVehicles(vehicles);
+                            service.saveVehiclesToFile(sorted, "vehicles_sorted.txt");
+                            System.out.println("Successfully saved sorted vehicles!");
+                        } catch (IOException e) {
+                            System.err.println(e);
+                        }
+                    }
 //                    case 5 -> {
 //                        System.out.print("Computed points: ");
 //                        EventService eventService = new EventService();

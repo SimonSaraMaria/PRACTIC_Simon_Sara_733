@@ -29,4 +29,12 @@ public class VehicleService {
 
         return vehicles;
     }
+
+    public void saveVehiclesToFile(List<Vehicle> vehicles, String fileName) throws IOException {
+        try (PrintWriter writer = new PrintWriter(fileName)) {
+            for (Vehicle vehicle : vehicles) {
+                writer.println(vehicle.toString());
+            }
+        }
+    }
 }

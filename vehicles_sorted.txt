@@ -1,0 +1,15 @@
+Vehicle{id=12, licensePlate='H-BUS-212', type=BUS, ownerCity='Hanover', status=ACTIVE}
+Vehicle{id=4, licensePlate='B-CTC-104', type=CAR, ownerCity='Berlin', status=BLOCKED}
+Vehicle{id=15, licensePlate='HH-CAR-515', type=CAR, ownerCity='Hamburg', status=ACTIVE}
+Vehicle{id=7, licensePlate='S-TR-707', type=TRUCK, ownerCity='Stuttgart', status=ACTIVE}
+Vehicle{id=2, licensePlate='M-SC-202', type=BUS, ownerCity='Munich', status=ACTIVE}
+Vehicle{id=9, licensePlate='D-BUS-909', type=BUS, ownerCity='Dresden', status=BLOCKED}
+Vehicle{id=10, licensePlate='HB-TR-010', type=TRUCK, ownerCity='Bremen', status=ACTIVE}
+Vehicle{id=3, licensePlate='HH-TR-303', type=TRUCK, ownerCity='Hamburg', status=ACTIVE}
+Vehicle{id=6, licensePlate='F-BUS-606', type=BUS, ownerCity='Frankfurt', status=ACTIVE}
+Vehicle{id=13, licensePlate='B-TR-313', type=TRUCK, ownerCity='Berlin', status=BLOCKED}
+Vehicle{id=14, licensePlate='M-CAR-414', type=CAR, ownerCity='Munich', status=ACTIVE}
+Vehicle{id=1, licensePlate='B-CTC-101', type=CAR, ownerCity='Berlin', status=ACTIVE}
+Vehicle{id=8, licensePlate='LE-CAR-808', type=CAR, ownerCity='Leipzig', status=ACTIVE}
+Vehicle{id=11, licensePlate='N-CAR-111', type=CAR, ownerCity='Nuremberg', status=ACTIVE}
+Vehicle{id=5, licensePlate='K-CTC-505', type=CAR, ownerCity='Cologne', status=ACTIVE}
