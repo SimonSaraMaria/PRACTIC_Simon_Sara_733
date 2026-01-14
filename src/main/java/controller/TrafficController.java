@@ -1,8 +1,8 @@
 package controller;
-import model.Fine;
-import model.TrafficEvent;
-import model.Vehicle;
+import model.*;
 import repository.TrafficRepository;
+import service.VehicleService;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -13,6 +13,7 @@ public class TrafficController {
         try{
             TrafficRepository repo = new TrafficRepository();
             Scanner scanner = new Scanner(System.in);
+            VehicleService service = new VehicleService();
 
             List<Vehicle> vehicles = repo.readVehicles("vehicles.json");
             List<Fine> fines = repo.readFines("fines.json");
@@ -22,7 +23,7 @@ public class TrafficController {
             while(running){
                 System.out.println("\n--- Traffic Control Menu ---");
                 System.out.println("1. Task 1: Show Counts and All Vehicles");
-//                System.out.println("2. Task 2: Filter by District and Status");
+                System.out.println("2. Task 2: Filter by Type and Status");
 //                System.out.println("3. Task 3: Sort tributes by skill level");
 //                System.out.println("4. Task 4: Saving sorted tributes to file");
 //                System.out.println("5. Task 5: Computed points for first 5 events");
@@ -42,14 +43,17 @@ public class TrafficController {
                             System.out.println(vehicle);
                         }
                     }
-//                    case 2 -> {
-//                        System.out.print("Input district: ");
-//                        int districtInput = scanner.nextInt();
-//                        List<Tribut> filtered = tributeService.filterAliveByDistrict(tributes, districtInput);
-//                        for (Tribut t : filtered) {
-//                            System.out.println(t);
-//                        }
-//                    }
+                    case 2 -> {
+                        scanner.nextLine();
+                        System.out.print("Input type: ");
+                        VehicleType typeinput = VehicleType.valueOf(scanner.nextLine());
+                        System.out.print("Input status: ");
+                        VehicleStatus statusinput = VehicleStatus.valueOf(scanner.nextLine());
+                        List<Vehicle> filtered = service.filterTypeAndStatus(vehicles, typeinput, statusinput);
+                        for (Vehicle vehicle : filtered) {
+                            System.out.println(vehicle);
+                        }
+                    }
 //                    case 3 -> {
 //                        System.out.print("Sorted tributes: ");
 //                        List<Tribut> sorted = tributeService.getSortedTributes(tributes);
